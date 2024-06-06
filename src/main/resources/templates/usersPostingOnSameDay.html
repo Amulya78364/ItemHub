@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Users with Two Items</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 50px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Search Users with Two Items</h2>
+    <form action="usersPostingOnSameDay" method="post" enctype="application/x-www-form-urlencoded">
+        <label for="categoryX">Category X:</label>
+        <input type="text" id="categoryX" name="categoryX" placeholder="Enter Category X">
+
+        <label for="categoryY">Category Y:</label>
+        <input type="text" id="categoryY" name="categoryY" placeholder="Enter Category Y">
+
+        <br>
+        <button type="submit">Search</button>
+    </form>
+</div>
+</body>
+</html>

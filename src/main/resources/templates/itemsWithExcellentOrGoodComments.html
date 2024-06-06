@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Items With Excellent Or Good Comments</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        select {
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-link {
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+<h2>Select a User:</h2>
+<form action="itemsWithExcellentOrGoodComments" method="post">
+    <select name="username">
+        <!-- Iterate over the usernames and create options in the dropdown -->
+        <option th:each="user : ${users}" th:value="${user}" th:text="${user}"></option>
+    </select>
+    <button type="submit">Search</button>
+</form>
+
+<!-- Display the items with positive comments -->
+<h2>Items with Positive Comments:</h2>
+<ul>
+    <li th:each="item : ${items}">
+        <span th:text="${item.title}"></span> - <span th:text="${item.description}"></span>
+    </li>
+</ul>
+
+<!-- Back to User Options link -->
+<a class="back-link" th:href="@{/userOptions}">Back to User Options</a>
+</body>
+
+</html>

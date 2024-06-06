@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Pairs with Excellent Reviews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+          .back-link {
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+<h2>User Pairs with Excellent Reviews</h2>
+<form action="userPairsWithExcellentReviews" method="get">
+    <table>
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th>User A</th>-->
+<!--            <th>User B</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+        <tbody>
+        <!-- Loop through user pairs -->
+        <tr th:each="userPair : ${userPairs}">
+            <td th:text="${userPair.username}"></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+<a class="back-link" th:href="@{/userOptions}">Back to User Options</a>
+</html>

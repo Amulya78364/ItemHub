@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Item Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        .categories {
+            display: inline-block;
+        }
+        .reviews-table {
+            margin-top: 20px;
+        }
+        .review-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+        .review-table th, .review-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .review-table th {
+            background-color: #007BFF;
+            color: white;
+        }
+        select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .alert-success {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Item Details</h1>
+
+    <table>
+        <tr>
+            <th>Title:</th>
+            <td th:text="${item.title}"></td>
+        </tr>
+        <tr>
+            <th>Description:</th>
+            <td th:text="${item.description}"></td>
+        </tr>
+        <tr>
+            <th>Category:</th>
+            <td>
+                <span th:each="category, stat : ${item.categories}" class="categories">
+                    <span th:text="${category.categoryName}"></span>
+                    <span th:unless="${stat.last}">, </span>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <th>Price:</th>
+            <td th:text="${item.price}"></td>
+        </tr>
+    </table>
+
+    <div class="reviews-table">
+        <h2>Reviews</h2>
+        <table class="review-table">
+            <tr>
+                <th>Rating</th>
+                <th>Description</th>
+            </tr>
+            <tr th:each="review : ${item.reviews}">
+                <td th:text="${review.rating}"></td>
+                <td th:text="${review.description}"></td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>Write a Review</h2>
+    <form action="/submitReview" method="post">
+        <input type="hidden" name="itemId" th:value="${item.itemId}" />
+        <select name="rating">
+            <option value="excellent">Excellent</option>
+            <option value="good">Good</option>
+            <option value="fair">Fair</option>
+            <option value="poor">Poor</option>
+        </select>
+        <textarea name="description" rows="4" cols="50" placeholder="Write your review here" required></textarea>
+        <button type="submit">Submit Review</button>
+    </form>
+
+    <div th:if="${successMessage}" class="alert-success">
+        <p th:text="${successMessage}"></p>
+    </div>
+</div>
+</body>
+</html>

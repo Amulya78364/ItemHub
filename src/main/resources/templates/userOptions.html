@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"><head>
+    <meta charset="UTF-8">
+    <title>User Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            margin-top: 100px;
+        }
+        .link-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .link-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Welcome</h1>
+    <p>Choose an option:</p>
+    <a class="link-button" th:href="@{/insertItem}">Insert Item</a>
+    <a class="link-button" th:href="@{/search}">Search Items</a>
+    <a class="link-button" th:href="@{/initializeDatabase}">Initialize Database</a>
+    <a class="link-button" th:href="@{/mostExpensiveItems}">Most Expensive Items</a>
+    <a class="link-button" th:href="@{/usersPostingOnSameDay}">Users Posting on Same Day</a>
+    <a class="link-button" th:href="@{/itemsWithExcellentOrGoodComments}">Items with Excellent/Good Comments</a>
+    <a class="link-button" th:href="@{/userWithMostItemsOnDate}">User with Most Items on Date</a>
+    <a class="link-button" th:href="@{/markFavorite}">Mark Favorite User</a>
+    <a class="link-button" th:href="@{/listFavorites}">List the Favorite Users</a>
+    <a class="link-button" th:href="@{/usersNeverPostedExcellentItems}">users Who Never Posted Excellent Items</a>
+    <a class="link-button" th:href="@{/usersWithoutPoorReviews}">Users Who Never Posted Poor Review </a>
+    <a class="link-button" th:href="@{/usersWithAllPoorReviews}">Users Posted Only Poor Review </a>
+    <a class="link-button" th:href="@{/usersNoPoorReviews}">Users Whose Items Never Received Poor Reviews</a>
+    <a class="link-button" th:href="@{/userPairsWithExcellentReviews}">User Pairs with Excellent Reviews</a>
+</div>
+</body>
+</html>

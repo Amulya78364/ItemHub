@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+    <script>
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<h1 style="text-align:center">Registration Form</h1>
+<body style="text-align:center">
+<form action="register" method="post" enctype="application/x-www-form-urlencoded" onsubmit="return validatePassword()">
+    <table style="margin-left:auto;margin-right:auto;">
+        <tr>
+            <td><b>Username: </b></td>
+            <td><input type="text" name="username" required></td>
+        </tr>
+        <tr>
+            <td><b>Password: </b></td>
+            <td><input type="password" name="password" id="password" required></td>
+        </tr>
+        <tr>
+            <td><b>Confirm Password: </b></td>
+            <td><input type="password" id="confirmPassword" required></td>
+        </tr>
+        <tr>
+            <td><b>First Name: </b></td>
+            <td><input type="text" name="firstName" required></td>
+        </tr>
+        <tr>
+            <td><b>Last Name: </b></td>
+            <td><input type="text" name="lastName" required></td>
+        </tr>
+        <tr>
+            <td><b>Email: </b></td>
+            <td><input type="email" name="email" required></td>
+        </tr>
+    </table><br><br>
+    <input type="Submit">
+</form>
+
+<div style="text-align:center;">
+    <p th:text="${message}" style="color: red;"></p>
+    <a th:href="@{/login}" style="text-decoration: none;">Login</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Most Expensive Items</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+<h2>Most Expensive Items by Category</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Category</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Loop through the most expensive items by category -->
+    <tr th:each="entry : ${mostExpensiveItemsByCategory.entrySet()}">
+        <td th:text="${entry.key.categoryName}"></td>
+        <td th:text="${entry.value.title}"></td>
+        <td th:text="${entry.value.description}"></td>
+        <td th:text="${entry.value.price}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+
+</html>

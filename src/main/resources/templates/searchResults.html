@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Search Results</h1>
+    <p>Items in the selected category:</p>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Price</th>
+        </tr>
+        <!-- Loop through the list of items and display them in a table -->
+        <tr th:each="item : ${items}">
+            <td>
+                <!-- Create a link to the "displayItem" page with the item's ID as a parameter -->
+                <a th:href="@{'/displayItem?itemId=' + ${item.itemId}}" th:text="${item.itemId}">View</a>
+            </td>
+            <td th:text="${item.title}">Item Title</td>
+            <td th:text="${item.description}">Item Description</td>
+            <td>
+                <!-- Loop through the list of categories and display their names -->
+                <span th:each="cat, iterStat : ${item.categories}">
+                    <span th:text="${cat.categoryName}"></span>
+                    <span th:unless="${iterStat.last}">, </span>
+                </span>
+            </td>
+            <td th:text="${item.price}">Item Price</td>
+        </tr>
+    </table>
+
+    <!-- Add a link to go back to the search page or any other action you need -->
+    <p><a href="/search">Back to Search</a></p>
+</div>
+</body>
+</html>

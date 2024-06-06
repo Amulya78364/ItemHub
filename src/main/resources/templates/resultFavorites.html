@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Result: Common Favorite Users</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+
+<body>
+<h2>Result: Common Favorite Users</h2>
+<table>
+    <thead>
+    <tr>
+        <th>User</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Loop through common favorites -->
+    <tr th:each="commonFavorite : ${commonFavorites}">
+        <td th:text="${commonFavorite.username}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+
+</html>
