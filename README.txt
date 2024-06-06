@@ -1,13 +1,10 @@
 --- User Registration and Login System ---
-Contributors: Sahana Sri Veeragandham, Karthik Ramireddy, Eeshwar Guntupalli
+Contributors: Amulya Nathala, Sahana Sri Veeragandham, Karthik Ramireddy
 
 --- Description ---
 The User Registration and Login System is a web-based application designed to allow users to create accounts, register their information, and securely log in. The primary goal of this project is to provide a secure and user-friendly platform where individuals can access personalized services and information. The system ensures that only registered users with valid credentials can access their accounts.
 
-YouTube link for the presentation video:
-https://youtu.be/M0q-PqH43Zk
-
-Sahana's Contribution:
+Amulya's Contribution:
 - Implemented the initial project structure.
 - Set up the Spring Boot application with necessary dependencies.
 - Created the database schema and defined the User entity.
@@ -24,7 +21,7 @@ Karthik's Contribution:
 - Ensured the integration of registration and login components.
 - Conducted testing and debugging of the login functionality.
 
-Eeshwar's Contribution:
+Sahana's Contribution:
 - Implemented Spring Data JPA to interact with the database.
 - Created the UserRepo interface for database operations.
 - Implemented parameterized queries to prevent SQL injection.
@@ -41,15 +38,12 @@ Outcome:
 The User Registration and Login System provides a secure and efficient platform for user registration and login, prioritizing the security of user data. The project serves as a foundation for future web applications requiring user authentication and access control.
 
 --- Online Marketplace Phase 2 Project ---
-Contributors: Sahana Sri Veeragandham, Karthik Ramireddy, Eeshwar Guntupalli
+Contributors: Amulya Nathala, Sahana Sri Veeragandham, Karthik Ramireddy
 
 --- Description ---
 The Online Marketplace Phase 2 project is an extension of our previous work on the User Registration and Login System. In this phase, we've expanded the application to create an online marketplace where users can post items for sale, search for items, write reviews, and initialize the database.
 
-YouTube link for the presentation video:
-https://youtu.be/vqLF5vfcKho
-
-Sahana's Contribution:
+Amulya's Contribution:
 - Designed and implemented the item insertion interface.
 - Developed the 'insertitem.html' template for users to add items.
 - Integrated automatic ID generation using the MySQL auto-increment feature.
@@ -63,7 +57,7 @@ Karthik's Contribution:
 - Implemented a user-friendly search feature with responsive design.
 - Conducted testing and validation of search functionality.
 
-Eeshwar's Contribution:
+Sahana's Contribution:
 - Implemented the review feature, allowing users to write reviews for items.
 - Developed the 'displayitem.html' template to display item details and reviews.
 - Added a dropdown menu for rating and description input.
@@ -90,15 +84,12 @@ Outcome:
 The Online Marketplace Phase 2 project extends our previous work by introducing item posting, searching, and reviewing functionalities. It strives to provide a seamless and secure online marketplace experience for users.
 
 --- Online Marketplace Phase 3 Project ---
-Contributors: Sahana Sri Veeragandham, Karthik Ramireddy, Eeshwar Guntupalli
+Contributors: Amulya Nathala, Sahana Sri Veeragandham, Karthik Ramireddy
 
 --- Description ---
 The Online Marketplace Phase 3 project builds upon the existing features of the User Registration and Login System and the Online Marketplace Phase 2. This phase introduces advanced functionalities, enhancing the user experience and providing more comprehensive insights into user activities and item interactions.
 
-YouTube link for the presentation video:
-https://youtu.be/ysLGtjXUq78
-
---- Sahana's Contributions ---
+--- Amulya's Contributions ---
 
 1. List the Most Expensive Items in Each Category:
    - Implemented functionality to retrieve and display the most expensive items in each category.
@@ -126,7 +117,7 @@ https://youtu.be/ysLGtjXUq78
    - Implemented a feature to display users whose items have never received any "Poor" reviews.
    - Created HTML template: 'usersNoPoorReviews.html'.
 
---- Eeshwar's Contributions ---
+--- Sahana's Contributions ---
 
 1. List Items with Excellent or Good Comments by User X:
    - Implemented a feature to list all items posted by a user (User X) with reviews limited to "Excellent" or "Good."
