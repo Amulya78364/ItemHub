@@ -2,7 +2,7 @@
 Contributors: Amulya Nathala, Sahana Sri Veeragandham, Karthik Ramireddy
 
 --- Description ---
-The User Registration and Login System is a web-based application designed to allow users to create accounts, register their information, and securely log in. The primary goal of this project is to provide a secure and user-friendly platform where individuals can access personalized services and information. The system ensures that only registered users with valid credentials can access their accounts.
+The ItemHub is a web-based application designed to allow users to create accounts, register their information, and securely log in. The primary goal of this project is to provide a secure and user-friendly platform where individuals can access personalized services and information. The system ensures that only registered users with valid credentials can access their accounts.
 
 Amulya's Contribution:
 - Implemented the initial project structure.
