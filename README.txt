@@ -1,4 +1,4 @@
---- User Registration and Login System ---
+--- ItemHub ---
 Contributors: Amulya Nathala, Sahana Sri Veeragandham, Karthik Ramireddy
 
 --- Description ---
